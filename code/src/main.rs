@@ -2,7 +2,7 @@ mod secrets;
 mod error;
 mod prelude;
 
-use secrets::secrets::get_discord_token;
+use secrets::get_discord_token;
 use crate::prelude::*;
 
 fn main() -> Result<()>{

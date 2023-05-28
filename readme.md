@@ -18,3 +18,8 @@ youtube-dl - Audio/Video download tool. You can install the tool with Python's p
 This is an optional dependency. It allows Songbird to download an audio source from the Internet, which will be converted to the audio format Discord uses.
 
 TODO: setup nix+direnv or docker (probably both) so we don't have to install these manually. 
+
+docker build stuff:
+
+sudo docker build . --tag 'mushie_bot'
+sudo docker run mushie_bot
