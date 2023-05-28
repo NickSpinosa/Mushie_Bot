@@ -21,5 +21,5 @@ TODO: setup nix+direnv or docker (probably both) so we don't have to install the
 
 docker build stuff:
 
-sudo docker build -f ./infra/Dockerfile. -tag mushie_bot:latest
-sudo docker run mushie_bot
+`sudo docker build -f ./infra/Dockerfile. -tag mushie_bot:latest`
+`sudo docker run mushie_bot`
