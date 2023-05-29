@@ -1,7 +1,0 @@
-# action.yml
-name: 'Docker Tests'
-description: 'Greet someone and record the time'
-
-runs:
-  using: 'docker'
-  image: '../'

@@ -14,3 +14,9 @@ fn main() -> Result<()>{
 
     Ok(())
 }
+
+// adds failing test to test CI - will remove before merge
+#[test]
+fn should_fail() {
+    unimplemented!();
+}
