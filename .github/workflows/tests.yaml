@@ -9,4 +9,7 @@ jobs:
   Run-Tests:
     runs-on: ubuntu-latest
     steps:
-      - uses: ./infra/actions/docker-tests
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Runs Tests  
+        uses: ./infra/actions/docker-tests
