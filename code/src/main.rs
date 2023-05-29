@@ -1,6 +1,7 @@
 mod secrets;
 mod error;
 mod prelude;
+mod bot;
 
 use secrets::get_discord_token;
 use crate::prelude::*;
