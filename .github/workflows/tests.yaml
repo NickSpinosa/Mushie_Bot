@@ -11,5 +11,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Runs Tests  
-        uses: ./infra/actions/docker-tests
+          #      - name: Runs Tests  
+          #    uses: ./infra/actions/docker-tests
+      - name: Tests
+        using: 'docker'
+        image: './infra/Docker-tess'
