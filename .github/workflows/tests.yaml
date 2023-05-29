@@ -9,5 +9,4 @@ jobs:
   Run-Tests:
     runs-on: ubuntu-latest
     steps:
-      name: Tests
-      uses: ./infra/actions/docker-tests
+      - uses: ./infra/actions/docker-tests
