@@ -4,3 +4,7 @@ on:
   pull_request:
     paths:
       '**.rs'
+
+runs:
+  using: 'docker'
+  image: './infra/Dockerfil'
