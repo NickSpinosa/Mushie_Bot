@@ -10,8 +10,6 @@ RUN pip install youtube_dl
 
 COPY ./code .
 
-# installs dependencies and compiles code
-RUN cargo install --path .
+# installs dependencies and runs tests 
+RUN cargo test
 
-#RUN cargo run
-CMD ["mushie_bot"]
