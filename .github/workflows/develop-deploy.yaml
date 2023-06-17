@@ -12,7 +12,7 @@ env:
   ECR_REPOSITORY: "mushie_bot"
 
 jobs:
-  Build Tag Push Deploy:
+  Build-Tag-Push-Deploy:
     runs-on: ubuntu-latest
     permissions:
       contents: read
