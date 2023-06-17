@@ -12,8 +12,11 @@ env:
   ECR_REPOSITORY: "mushie_bot"
 
 jobs:
-  docker-push:
+  Build Tag Push Deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -44,17 +47,6 @@ jobs:
           push: true 
           provenance: false
           tags: ${{ steps.login-ecr.outputs.registry }}/${{ env.ECR_REPOSITORY }}:${{ steps.sha_short.outputs.sha_short }}
-
-
-  terraform:
-    if: github.repository != 'hashicorp-education/learn-terraform-github-actions'
-    name: "Terraform Apply"
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-    steps:  
-      - name: Checkout
-        uses: actions/checkout@v3
 
       - name: Upload Configuration
         uses: hashicorp/tfc-workflows-github/actions/upload-configuration@v1.0.0
