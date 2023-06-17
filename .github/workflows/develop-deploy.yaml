@@ -3,8 +3,7 @@ name: Develop Deploy
 on:
   push:
     branches:
-      - main
-
+      - master
 env:
   TF_CLOUD_ORGANIZATION: "nspinosa"
   TF_API_TOKEN: "${{ secrets.TF_API_TOKEN }}"
