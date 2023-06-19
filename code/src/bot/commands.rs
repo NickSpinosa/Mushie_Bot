@@ -1,5 +1,9 @@
-use serenity::{framework::standard::{macros::command, CommandResult, Args}, model::prelude::Message, prelude::Context};
+use serenity::{framework::standard::{macros::{command, group}, CommandResult, Args}, model::prelude::Message, prelude::Context};
 use serenity::Result as SerenityResult;
+
+#[group]
+#[commands(deafen, join, play, leave, undeafen, mute, unmute, ping)]
+struct General;
 
 #[command]
 #[only_in(guilds)]
