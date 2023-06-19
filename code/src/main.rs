@@ -1,12 +1,13 @@
-mod secrets;
+mod bot;
+mod datastructures;
 mod error;
 mod prelude;
-mod bot;
+mod secrets;
 
-use secrets::get_discord_token;
 use crate::prelude::*;
+use secrets::get_discord_token;
 
-fn main() -> Result<()>{
+fn main() -> Result<()> {
     println!("Hello, world!");
 
     // adds comment to trigger test run maybe?

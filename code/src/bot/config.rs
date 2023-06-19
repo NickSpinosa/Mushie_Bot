@@ -4,11 +4,11 @@ use serenity::{
     async_trait,
     client::{Client, EventHandler},
     framework::{
-        StandardFramework,
         standard::{
-            Args, CommandResult,
             macros::{command, group},
+            Args, CommandResult,
         },
+        StandardFramework,
     },
     model::{channel::Message, gateway::Ready},
     prelude::GatewayIntents,
@@ -39,8 +39,7 @@ pub async fn build_client(token: &str) -> Client {
 }
 
 fn build_intents() -> GatewayIntents {
-    GatewayIntents::non_privileged()
-        | GatewayIntents::MESSAGE_CONTENT
+    GatewayIntents::non_privileged() | GatewayIntents::MESSAGE_CONTENT
 }
 
 fn build_framework() -> StandardFramework {
