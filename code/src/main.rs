@@ -1,5 +1,4 @@
 mod bot;
-mod datastructures;
 mod error;
 mod prelude;
 mod secrets;
