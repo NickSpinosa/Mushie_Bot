@@ -1,19 +1,12 @@
-use serenity::client::Context;
 use crate::bot::commands::GENERAL_GROUP;
+use serenity::client::Context;
 
+use serenity::framework::StandardFramework;
 use serenity::{
     async_trait,
     client::{Client, EventHandler},
-    framework::{
-        standard::{
-            macros::{command, group},
-            Args, CommandResult,
-        },
-        StandardFramework,
-    },
     model::{channel::Message, gateway::Ready},
     prelude::GatewayIntents,
-    Result as SerenityResult,
 };
 use songbird::SerenityInit;
 
@@ -44,10 +37,10 @@ pub async fn build_client(token: &str) -> Client {
 }
 
 fn build_intents() -> GatewayIntents {
-    GatewayIntents::non_privileged() |
-        GatewayIntents::MESSAGE_CONTENT |
-        GatewayIntents::DIRECT_MESSAGES |
-        GatewayIntents::GUILD_MESSAGES
+    GatewayIntents::non_privileged()
+        | GatewayIntents::MESSAGE_CONTENT
+        | GatewayIntents::DIRECT_MESSAGES
+        | GatewayIntents::GUILD_MESSAGES
 }
 
 fn build_framework() -> StandardFramework {

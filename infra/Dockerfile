@@ -11,7 +11,8 @@ RUN pip install youtube_dl
 COPY ./code .
 
 # installs dependencies and compiles code
-RUN cargo install --path .
+# RUN cargo install --path .
+RUN cargo build -r
 
 #RUN cargo run
-CMD ["mushie_bot"]
+ENTRYPOINT ["./target/release/mushie_bot"]

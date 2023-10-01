@@ -3,23 +3,21 @@ mod error;
 mod prelude;
 mod secrets;
 
-use crate::{prelude::*, bot::config::build_client};
-use secrets::get_discord_token;
-use songbird::EventHandler;
+use crate::{bot::config::build_client, prelude::*};
+use std::{env, println};
 
 #[tokio::main]
 async fn main() -> Result<()> {
-    println!("Hello, world!");
+    let args: Vec<String> = env::args().collect();
+    println!("args: {:?}", args);
 
-    // adds comment to trigger test run maybe?
-    println!("discord token: {}", get_discord_token()?);
+    if let Some(token) = args.get(1) {
+        let mut client = build_client(&token).await;
 
-    let token = get_discord_token()?;
-
-    let mut client = build_client(&token).await;
-
-    if let Err(why) = client.start().await {
-        println!("Client error: {:?}", why);
+        if let Err(why) = client.start().await {
+            println!("Client error: {:?}", why);
+        }
     }
+
     Ok(())
 }
